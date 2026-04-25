@@ -1,0 +1,268 @@
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.hero-main,
+.hero-side,
+.about-card,
+.project-card,
+.skill-card,
+.process-card,
+.quote-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    background: var(--panel);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+}
+
+.hero-main,
+.hero-side {
+    padding: 34px;
+}
+
+.hero-main {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-main::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(86, 211, 191, 0.34), transparent 70%);
+    pointer-events: none;
+}
+
+.hero-main h1 {
+    margin-top: 20px;
+    max-width: 11ch;
+    font-size: clamp(3.1rem, 7vw, 6.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+}
+
+.hero-copy {
+    max-width: 60ch;
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 1.06rem;
+    line-height: 1.8;
+}
+
+.cta-group {
+    margin-top: 28px;
+}
+
+.hero-side {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+}
+
+.terminal {
+    padding: 22px;
+    border: 1px solid rgba(86, 211, 191, 0.18);
+    border-radius: var(--radius-lg);
+    background: var(--panel-strong);
+}
+
+.terminal-top {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+}
+
+.dot:nth-child(2) {
+    background: #ffd166;
+}
+
+.dot:nth-child(3) {
+    background: var(--accent);
+}
+
+.terminal code {
+    display: block;
+    color: #ddfff8;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.95rem;
+    line-height: 1.85;
+}
+
+.hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.metric {
+    padding: 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+}
+
+.metric strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.8rem;
+}
+
+.metric span,
+.about-card p,
+.project-card p,
+.skill-card p,
+.process-card p,
+.quote-card span {
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.metric span {
+    font-size: 0.93rem;
+    line-height: 1.55;
+}
+
+.about-grid,
+.project-grid,
+.stack-grid,
+.process-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.about-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+.about-card,
+.project-card,
+.skill-card,
+.process-card {
+    padding: 24px;
+    border-radius: var(--radius-lg);
+}
+
+.inline-list {
+    margin-top: 22px;
+}
+
+.project-grid {
+    grid-template-columns: 1.25fr 1fr 1fr;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card.featured {
+    background:
+        linear-gradient(180deg, rgba(86, 211, 191, 0.12), transparent 50%),
+        rgba(16, 23, 34, 0.92);
+    border-color: rgba(86, 211, 191, 0.3);
+}
+
+.project-kicker,
+.mini-title {
+    color: #a3f0e4;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.project-card h3,
+.skill-card h3,
+.process-card h3,
+.about-card h3 {
+    margin-top: 16px;
+    font-size: 1.32rem;
+    letter-spacing: -0.03em;
+}
+
+.chip-list {
+    margin-top: 20px;
+}
+
+.project-meta {
+    margin-top: 24px;
+    color: #a3f0e4;
+    font-size: 0.92rem;
+}
+
+.stack-grid {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+.skill-list,
+.process-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.skill-card,
+.process-card {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.quote-card {
+    padding: 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(86, 211, 191, 0.18);
+    background:
+        linear-gradient(180deg, rgba(86, 211, 191, 0.12), transparent 100%),
+        rgba(10, 16, 24, 0.94);
+}
+
+.quote-card p {
+    color: var(--text);
+    font-size: 1.18rem;
+    line-height: 1.65;
+    letter-spacing: -0.02em;
+}
+
+.socials {
+    margin-top: 8px;
+}
+
+@media (max-width: 1040px) {
+    .hero,
+    .about-grid,
+    .project-grid,
+    .stack-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .hero-main,
+    .hero-side {
+        padding: 24px;
+    }
+
+    .hero-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-main h1 {
+        font-size: clamp(2.7rem, 16vw, 4rem);
+    }
+}
